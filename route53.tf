@@ -1,3 +1,4 @@
+// DOMAIN: danytulumidis
 resource "aws_route53_zone" "danytulumidis" {
   name = "danytulumidis.com"
 }
@@ -16,4 +17,9 @@ resource "aws_route53_record" "danytulumidis_alias" {
   type = "A"
   ttl = "60"
   records = ["185.199.108.153","185.199.109.153","185.199.110.153","185.199.111.153"]
+}
+
+// DOMAIN: benaturely
+resource "aws_route53_zone" "benaturely" {
+  name = "benaturely.com"
 }
