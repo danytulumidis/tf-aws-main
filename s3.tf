@@ -17,3 +17,8 @@ resource "aws_s3_bucket" "terraform_state" {
     "terraform" = true
   }
 }
+
+resource "aws_s3_bucket" "media_files" {
+  bucket = "media-files-dtf"
+  acl    = "public-read"
+}
