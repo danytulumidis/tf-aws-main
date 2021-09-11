@@ -22,3 +22,21 @@ resource "aws_s3_bucket" "media_files" {
   bucket = "media-files-dtf"
   acl    = "public-read"
 }
+
+resource "aws_s3_bucket_policy" "media_files_policy" {
+  bucket = aws_s3_bucket.media_files.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Id      = "public"
+    Statement = [
+      {
+        Sid:"PublicRead",
+        Effect:"Allow",
+        Principal: "*",
+        Action:["s3:GetObject"],
+        Resource:["arn:aws:s3:::media-files-dtf/*"]
+      },
+    ]
+  })
+}
