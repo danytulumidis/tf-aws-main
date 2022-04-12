@@ -8,7 +8,7 @@ resource "aws_route53_record" "danytulumidis_cname" {
   name = "www.danytulumidis.com"
   type = "CNAME"
   ttl = "300"
-  records = ["dextavision.github.io"]
+  records = ["cname.vercel-dns.com"]
 }
 
 resource "aws_route53_record" "danytulumidis_alias" {
@@ -16,7 +16,7 @@ resource "aws_route53_record" "danytulumidis_alias" {
   name = "danytulumidis.com"
   type = "A"
   ttl = "60"
-  records = ["185.199.108.153","185.199.109.153","185.199.110.153","185.199.111.153"]
+  records = ["76.76.21.21"]
 }
 
 // DOMAIN: benaturely
